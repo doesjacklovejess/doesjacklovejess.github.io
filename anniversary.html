@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="outer-container">
+   <div class="inner-container">
+     <div class="centered-content">
+        <p><b>The lovely anniversary plan October 23, year 4 of the lantern:</b></p>
+        <div class="small">
+          <p><ol>
+            <li><b>11:00AM NZT:</b> Make <a href="https://damndelicious.net/wprm_print/34764/" target="new">Da Clam Chowda</a>
+              <ul><li>[Plus a bonus surprise maybe? Who knows!!]</li></ul></li>
+            <li><b>12:30PM:</b> Watch all-time classic <a href="https://www.netflix.com/watch/60024942?source=35" target="new">Catch Me if you Can</a></li>
+            <li><b>3:00PM:</b> Jess opens her <button class="button-29" onclick=show_gift()>Gift!</button></li>
+            <li><b>3:15PM:</b> Plan for TSwift Dublin trip!</li>
+            <li><b>4:00PM:</b> Profit!!</li>
+          </ol></p>
+        </div>
+        <b><p id="gift-too-soon"></p></b>
+        <div class="inner-container">
+          <div class="centered-content">
+            <img id="gift" src="cookin.jpg" width="10px" style="visibility:hidden">
+          </div>
+        </div>
+     </div>
+   </div>
+   <div class="inner-container">
+     <div class="centered-content">
+        <img src="hot.jpg" width="300px">
+     </div>
+   </div>
+   
+</div>
+
+
+
+
+
+<script>
+function show_gift() {
+  // Set the date we're counting down to
+  var countDownDate = new Date("Oct 23, 2023 15:00:00").getTime();
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    document.getElementById("gift").style.visibility = "visible";
+    document.getElementById("gift").style.width = "600px";
+    document.getElementById("gift-too-soon").innerHTML = ""; 
+  }
+  else {
+    document.getElementById("gift-too-soon").innerHTML = "BAE MUST BE PATIENT"; 
+  }
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  var outstr = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+  console.log(outstr)
+}
+</script>
+
+</body>
+</html>
